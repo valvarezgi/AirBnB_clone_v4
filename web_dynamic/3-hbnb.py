@@ -25,12 +25,11 @@ def hbnb():
     states = storage.all(State).values()
     states = sorted(states, key=lambda k: k.name)
     st_ct = []
-    
 
     for state in states:
         st_ct.append([state, sorted(state.cities, key=lambda k: k.name)])
-    
-    cache_id=uuid.uuid4()
+
+    cache_id = uuid.uuid4()
 
     amenities = storage.all(Amenity).values()
     amenities = sorted(amenities, key=lambda k: k.name)
@@ -41,7 +40,7 @@ def hbnb():
     return render_template('3-hbnb.html',
                            states=st_ct,
                            amenities=amenities,
-                           places=places, 
+                           places=places,
                            cache_id=cache_id)
 
 
