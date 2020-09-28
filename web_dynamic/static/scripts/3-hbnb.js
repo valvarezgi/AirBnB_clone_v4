@@ -33,7 +33,7 @@ $.ajax({
   contentType: 'application/json',
   success: function (data) {
     for (let index = 0; index < data.length; index++) {
-      const place = data[index];      
+      const place = data[index];
       $('section.places').append('<article><div class="title_box"> <h2>' + place.name +
       '</h2> <div class="price_by_night">$' + place.price_by_night +
       '</div></div><div class="information"><div class="max_guest">' +
