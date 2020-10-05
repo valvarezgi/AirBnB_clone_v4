@@ -1,7 +1,7 @@
 const $ = window.$;
-window.onload = () => {
+window.onload = function () {
   const checkAmenities = {};
-  $(document).on('change', "input[type='checkbox']", () => {
+  $(document).on('change', "input[type='checkbox']", function () {
     if (this.checked) {
       checkAmenities[$(this).data('id')] = $(this).data('name');
     } else {
@@ -14,7 +14,7 @@ window.onload = () => {
       $('div.amenities h4').html('&nbsp;');
     }
   });
-  $.get('http://127.0.0.1:5001/api/v1/status/', (data, status) => {
+  $.get('http://127.0.0.1:5001/api/v1/status/', function (data, status) {
     console.log(data.status);
     if (data.status === 'OK') {
       $('div#api_status').addClass('available');

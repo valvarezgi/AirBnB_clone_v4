@@ -1,8 +1,8 @@
 
 const $ = window.$;
-window.onload = () => {
+window.onload = function () {
   const checkAmenities = {};
-  $(document).on('change', "input[type='checkbox']", () => {
+  $(document).on('change', "input[type='checkbox']", function () {
     if (this.checked) {
       checkAmenities[$(this).data('id')] = $(this).data('name');
     } else {
